@@ -1,0 +1,20 @@
+@import './styles/meyerReset.scss';
+
+body {
+  background: #000;
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    text-align: center;
+
+    h1 {
+      margin: 20px 0;
+      width: 100%;
+      color: #fff;
+    }
+  }
+}
