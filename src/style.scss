@@ -1,20 +1,25 @@
 @import './styles/meyerReset.scss';
 
 body {
-  background: #000;
+    background: #000;
+    height: 100vh;
+    }
 
-  main {
+main {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 50px;
+    justify-content: center;
     text-align: center;
+    height: 100%;
 
+  div {
+      display: block;
+    }
     h1 {
       margin: 20px 0;
       width: 100%;
       color: #fff;
-    }
+      font-size: 10rem;
   }
 }
