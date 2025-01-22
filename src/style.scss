@@ -3,21 +3,20 @@
 body {
   background: #000;
   color: #fff;
-  height: 100vh;
   font-family: sans-serif;
+
+  * {
+    transition: all 0.2s ease-in-out;
+  }
 }
-    
-#app {
-  height: 100%;
+
+main {
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-}
-
-main {
-  
   h1 {
     margin: 20px 0;
     width: 100%;
@@ -27,7 +26,35 @@ main {
 
 }
 
+footer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+button {
+  fill: #666;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    fill: #fff;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+  // need on click, maybe make white BG
+}
+
 div.toggleContainer {
+  text-align: center;
   background: #666;
-  width: 100%;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 125px);
+  .active {
+    top: 0;
+  }
 }
