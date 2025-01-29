@@ -16,9 +16,7 @@ function App() {
   return (
     <>
       <BigClock />
-      <div>
-        <BigClockOptions options={options} handleOptionsChange={handleOptions} />
-      </div>
+      <BigClockOptions options={options} handleOptionsChange={handleOptions} />
     </>
   );
 }

@@ -1,16 +1,16 @@
 @import './styles/meyerReset.scss';
 
 body {
-  background: #000;
-  color: #fff;
   font-family: sans-serif;
-
+  
   * {
     transition: all 0.2s ease-in-out;
   }
 }
 
 main {
+  background: #000;
+  color: #fff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ main {
 
 }
 
-footer {
+.toggleButton {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -38,23 +38,36 @@ button {
   border: none;
   cursor: pointer;
 
-  &:hover {
+  &.active, &:hover {
     fill: #fff;
     svg {
       transform: rotate(90deg);
     }
   }
-  // need on click, maybe make white BG
 }
 
 div.toggleContainer {
+  padding: 10px;
   text-align: center;
-  background: #666;
-  width: 250px;
+  background: #ffffff55;
+  max-width: 250px;
+  width: 100%;
   position: absolute;
-  top: 0;
-  left: calc(50% - 125px);
-  .active {
+  top: -300px;
+  left: calc(50% - 135px);
+  transition: 0.4s;
+
+  &.active {
     top: 0;
+  }
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  
+  p {
+    cursor: pointer;
   }
 }
