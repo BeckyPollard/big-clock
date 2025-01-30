@@ -36,7 +36,12 @@ button {
   fill: #666;
   background: transparent;
   border: none;
-  cursor: pointer;
+  padding: 0;
+
+  svg {
+    cursor: pointer;
+    padding: 5px;
+  }
 
   &.active, &:hover {
     fill: #fff;
