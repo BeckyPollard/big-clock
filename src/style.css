@@ -1,4 +1,4 @@
-@import './styles/meyerReset.scss';
+@import url("./styles/meyerReset.css");
 
 body {
   font-family: sans-serif;
