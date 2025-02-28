@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect, useCallback} from 'react';
-import {Options} from '../../types/types' 
+import {Options} from '../../types/types'
+import alertPlonkResource from '../../assets/audio/plonk.mp3';
 
 type BigClockOptionsProps = {
   handleOptionsChange: (options:Options) => void;
@@ -10,7 +11,7 @@ export default function BigClockOptions(props: BigClockOptionsProps) {
   const [toggleVisible, setToggleVisible] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const alertPlonk = new Audio('/assets/audio/plonk.mp3');
+  const alertPlonk = new Audio(alertPlonkResource);
 
   const handleAnnounceHrOpt = useCallback((announce: boolean) => {
     const newOptions: Options = {...options};

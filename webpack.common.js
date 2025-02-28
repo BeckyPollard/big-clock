@@ -29,7 +29,7 @@ module.exports = {
         loader: 'ts-loader'
       },
       {
-        test: /\.(svg|png|jp?eg|gif|ico)$/i,
+        test: /\.(svg|png|jp?eg|gif|ico|mp3)$/i,
         type: 'asset/resource',
       },
       {
@@ -38,6 +38,15 @@ module.exports = {
           loader: 'file-loader',
           options: {
             outputPath: 'assets/fonts',
+          },
+        },
+      },
+      {
+        test: /\.(mp3)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/audio',
           },
         },
       },

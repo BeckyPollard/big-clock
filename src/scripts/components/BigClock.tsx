@@ -1,5 +1,18 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import alertOneResource from '../../assets/audio/1.mp3';
+import alertTwoResource from '../../assets/audio/2.mp3';
+import alertThreeResource from '../../assets/audio/3.mp3';
+import alertFourResource from '../../assets/audio/4.mp3';
+import alertFiveResource from '../../assets/audio/5.mp3';
+import alertSixResource from '../../assets/audio/6.mp3';
+import alertSevenResource from '../../assets/audio/7.mp3';
+import alertEightResource from '../../assets/audio/8.mp3';
+import alertNineResource from '../../assets/audio/9.mp3';
+import alertTenResource from '../../assets/audio/10.mp3';
+import alertElevenResource from '../../assets/audio/11.mp3';
+import alertTwelveResource from '../../assets/audio/12.mp3';
+import alertPingResource from '../../assets/audio/ping.mp3';
 
 type BigClockProps = {
   announceHour: boolean;
@@ -19,19 +32,19 @@ export default function BigClock(props: BigClockProps) {
   
   const [time, setTime] = useState(now);
 
-  const alertOne = new Audio('/assets/audio/1.mp3');
-  const alertTwo = new Audio('/assets/audio/2.mp3');
-  const alertThree = new Audio('/assets/audio/3.mp3');
-  const alertFour = new Audio('/assets/audio/4.mp3');
-  const alertFive = new Audio('/assets/audio/5.mp3');
-  const alertSix = new Audio('/assets/audio/6.mp3');
-  const alertSeven = new Audio('/assets/audio/7.mp3');
-  const alertEight = new Audio('/assets/audio/8.mp3');
-  const alertNine = new Audio('/assets/audio/9.mp3');
-  const alertTen = new Audio('/assets/audio/10.mp3');
-  const alertEleven = new Audio('/assets/audio/11.mp3');
-  const alertTwelve = new Audio('/assets/audio/12.mp3');
-  const alertPing = new Audio('/assets/audio/ping.mp3');
+  const alertOne = new Audio(alertOneResource);
+  const alertTwo = new Audio(alertTwoResource);
+  const alertThree = new Audio(alertThreeResource);
+  const alertFour = new Audio(alertFourResource);
+  const alertFive = new Audio(alertFiveResource);
+  const alertSix = new Audio(alertSixResource);
+  const alertSeven = new Audio(alertSevenResource);
+  const alertEight = new Audio(alertEightResource);
+  const alertNine = new Audio(alertNineResource);
+  const alertTen = new Audio(alertTenResource);
+  const alertEleven = new Audio(alertElevenResource);
+  const alertTwelve = new Audio(alertTwelveResource);
+  const alertPing = new Audio(alertPingResource);
 
   useEffect(() => { // TIME KEEPING!
     const interval = setInterval(() => {
