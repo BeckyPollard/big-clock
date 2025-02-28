@@ -18,6 +18,9 @@ function App() {
   return (
     <>
       <BigClock announceHour={options.announceHour} announceMin={options.announceMin}/>
+      <footer>
+        <p>☆ just a simple big clock made by <a href="https://github.com/BeckyPollard/big-clock">Becky</a> ☆</p>
+      </footer>
       <BigClockOptions options={options} handleOptionsChange={handleOptions} />
     </>
   );

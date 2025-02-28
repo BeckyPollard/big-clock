@@ -21,7 +21,7 @@ main {
     margin: 20px 0;
     width: 100%;
     color: #fff;
-    font-size: 8.5rem;
+    font-size: clamp(1rem, 15vw, 20rem);
     text-transform: uppercase;
   }
 
@@ -75,5 +75,21 @@ label {
   
   p {
     cursor: pointer;
+  }
+}
+
+footer {
+  background: #FF91AF;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  font-family: monospace;
+
+  a {
+    color: #fff
+  }
+  
+  a:hover {
+    color: #000
   }
 }
