@@ -5,7 +5,8 @@ import BigClockOptions from './components/BigClockOptions';
 
 function App() {
   const initOptions: Options = {
-    announceHour: false,
+    announceHour: true,
+    announceMin: true,
   } 
   const [options, setOptions] = useState<Options>({...initOptions});
   
@@ -15,7 +16,7 @@ function App() {
   
   return (
     <>
-      <BigClock announceHour={options.announceHour}/>
+      <BigClock announceHour={options.announceHour} announceMin={options.announceMin}/>
       <BigClockOptions options={options} handleOptionsChange={handleOptions} />
     </>
   );

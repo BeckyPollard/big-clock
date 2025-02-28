@@ -10,14 +10,25 @@ export default function BigClockOptions(props: BigClockOptionsProps) {
   const [toggleVisible, setToggleVisible] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleAnnounceChecked = useCallback((announce: boolean) => {
+  const alertPlonk = new Audio('/assets/audio/plonk.mp3');
+
+  const handleAnnounceHrOpt = useCallback((announce: boolean) => {
     const newOptions: Options = {...options};
     newOptions.announceHour = announce;
     setOptions(newOptions); // need this?
     props.handleOptionsChange(newOptions);
+    alertPlonk.play();
+  }, [options, setOptions]);
+  const handleAnnounceMinOpt = useCallback((announce: boolean) => {
+    const newOptions: Options = {...options};
+    newOptions.announceMin = announce;
+    setOptions(newOptions); // need this?
+    props.handleOptionsChange(newOptions);
+    alertPlonk.play();
   }, [options, setOptions]);
 
   const handleClickEvent = (ev: MouseEvent) : void => {
+    // CLOSING THE OPTIONS MENU
     // if the click happens outside of the menu (ref div)
     // close box with setToggleVisible
     if (ev.target instanceof HTMLElement && !menuRef.current?.contains(ev.target)) {
@@ -63,24 +74,16 @@ export default function BigClockOptions(props: BigClockOptionsProps) {
               <input
                 type="checkbox"
                 id="opt-announce"
-                onChange={(e) => handleAnnounceChecked(e.target.checked)}
+                onChange={(e) => handleAnnounceHrOpt(e.target.checked)}
               />
             </label>
-            <label htmlFor="opt-theme">
-              <p>Dark Theme?</p>
-              <input type="checkbox" id="opt-theme"/>
-            </label>
-            <label htmlFor="opt-alarm">
-              <p>Timer?</p>
-              <input type="number" id="opt-alarm"/>
-            </label>
-            <label htmlFor="opt-gradient">
-              <p>Timer Gradient?</p>
-              <input type="checkbox" id="opt-gradient"/>
-            </label>
-            <label htmlFor="opt-alarm-sound">
-              <p>Timer Sound?</p>
-              <input type="checkbox" id="opt-alarm-sound"/>
+            <label htmlFor="opt-announce">
+              <p>Alert Minute?</p>
+              <input
+                type="checkbox"
+                id="opt-announce"
+                onChange={(e) => handleAnnounceMinOpt(e.target.checked)}
+              />
             </label>
           </fieldset>
         </div>
