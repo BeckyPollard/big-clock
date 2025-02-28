@@ -4,9 +4,10 @@ import BigClock from './components/BigClock';
 import BigClockOptions from './components/BigClockOptions';
 
 function App() {
+  const params = new URL(document.location.toString()).searchParams;
   const initOptions: Options = {
-    announceHour: true,
-    announceMin: true,
+    announceHour: params.get('hr') == '1',
+    announceMin: params.get('min') == '1',
   } 
   const [options, setOptions] = useState<Options>({...initOptions});
   

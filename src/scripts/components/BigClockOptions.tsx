@@ -75,6 +75,7 @@ export default function BigClockOptions(props: BigClockOptionsProps) {
                 type="checkbox"
                 id="opt-announce"
                 onChange={(e) => handleAnnounceHrOpt(e.target.checked)}
+                checked={props.options.announceHour}
               />
             </label>
             <label htmlFor="opt-announce">
@@ -83,6 +84,7 @@ export default function BigClockOptions(props: BigClockOptionsProps) {
                 type="checkbox"
                 id="opt-announce"
                 onChange={(e) => handleAnnounceMinOpt(e.target.checked)}
+                checked={props.options.announceMin}
               />
             </label>
           </fieldset>

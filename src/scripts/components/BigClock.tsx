@@ -6,31 +6,39 @@ type BigClockProps = {
   announceMin: boolean;
 };
 export default function BigClock(props: BigClockProps) {
+  const params = new URL(document.location.toString()).searchParams;
+
   const now = new Date()
     .toLocaleTimeString([], {timeStyle: 'short'})
     .replace(/[.]/g, '');
-  
-    const [time, setTime] = useState(now);
 
-    const alertOne = new Audio('/assets/audio/1.mp3');
-    const alertTwo = new Audio('/assets/audio/2.mp3');
-    const alertThree = new Audio('/assets/audio/3.mp3');
-    const alertFour = new Audio('/assets/audio/4.mp3');
-    const alertFive = new Audio('/assets/audio/5.mp3');
-    const alertSix = new Audio('/assets/audio/6.mp3');
-    const alertSeven = new Audio('/assets/audio/7.mp3');
-    const alertEight = new Audio('/assets/audio/8.mp3');
-    const alertNine = new Audio('/assets/audio/9.mp3');
-    const alertTen = new Audio('/assets/audio/10.mp3');
-    const alertEleven = new Audio('/assets/audio/11.mp3');
-    const alertTwelve = new Audio('/assets/audio/12.mp3');
-    const alertPing = new Audio('/assets/audio/ping.mp3');
+  const nowPlus = (new Date()).getTime()
+  const nowPlusFifteen = new Date(nowPlus + 900000)
+    .toLocaleTimeString([], {timeStyle: 'short'})
+    .replace(/[.apm]/g, '');
+  
+  const [time, setTime] = useState(now);
+
+  const alertOne = new Audio('/assets/audio/1.mp3');
+  const alertTwo = new Audio('/assets/audio/2.mp3');
+  const alertThree = new Audio('/assets/audio/3.mp3');
+  const alertFour = new Audio('/assets/audio/4.mp3');
+  const alertFive = new Audio('/assets/audio/5.mp3');
+  const alertSix = new Audio('/assets/audio/6.mp3');
+  const alertSeven = new Audio('/assets/audio/7.mp3');
+  const alertEight = new Audio('/assets/audio/8.mp3');
+  const alertNine = new Audio('/assets/audio/9.mp3');
+  const alertTen = new Audio('/assets/audio/10.mp3');
+  const alertEleven = new Audio('/assets/audio/11.mp3');
+  const alertTwelve = new Audio('/assets/audio/12.mp3');
+  const alertPing = new Audio('/assets/audio/ping.mp3');
 
   useEffect(() => { // TIME KEEPING!
     const interval = setInterval(() => {
       const newTime = new Date()
       .toLocaleTimeString([], {timeStyle: 'short'})
       .replace(/[.]/g, '');
+
       if (time !== newTime) {
         setTime(newTime);
 
@@ -81,11 +89,14 @@ export default function BigClock(props: BigClockProps) {
 
     return () => clearInterval(interval);
     //https://www.geeksforgeeks.org/how-to-use-setinterval-method-inside-react-components/
-  }, [time]);
+  }, [time, props.announceMin, props.announceHour]);
 
   return (
     <main>
-      <h1>{time}</h1>
+      <div>
+        <h1>{time}</h1>
+        {params.get('fifteen') == '1' ? <h2>+15 = {nowPlusFifteen}</h2> : <></>} {/* loralie's request */}
+      </div>
     </main>
   );
 }
