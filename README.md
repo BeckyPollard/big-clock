@@ -1,10 +1,15 @@
 # Big Clock (WIP)
 ![web app preview](https://github.com/user-attachments/assets/8ced1e7e-a781-41ea-a0d2-b88d66e90159)
 
-<p align="center">A simple, in-your-face clock for time management.</p><br>
+<div align="center">
+  <p>A simple, in-your-face clock for time management.</p>
+  <img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" /><img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" /><img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" />
+</div>
 
 ## ⭐️ Why
 It's part of my personal productivity needs. I like having a gentle reminder about how much time I have left to do whatever or how long I've spent working on something. I don't want a whole whack-load of alarms to keep track of. I just want an easy, to-the-point reference. Maybe this tool will help someone else too.
+
+Most of all, this is a project for learning and experimenting.
 
 ## 🕓 View the project
 ### → https://garbagemancer-clock.netlify.app/
