@@ -45,6 +45,16 @@ details #options {
   opacity: 0;
 }
 
+#options form {
+  text-align: left;
+}
+
+#options label {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
 main {
   height: 100vh;
   display: flex;

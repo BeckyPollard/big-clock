@@ -21,12 +21,24 @@
         <div id="options">
           <p>Big Clock Options</p>
           <hr>
-          <ul>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-          </ul>
+          <form>
+            <h2>Audio Settings</h2>
+            <label for="audioMin">
+              Ping Minute
+              <input
+                type="checkbox"
+                id="audioMin"
+                name="audioMin"
+                value="audioMin"
+                onClick='setOption(this.id)'
+              >
+            </label>
+            <label for="audioHr">
+              Announce Hour
+              <input type="checkbox" id="audioHr" name="audioHr" value="audioHr" disabled>
+            </label>
+          </form>
+          <hr>
         </div>
       </details>
     </header>
