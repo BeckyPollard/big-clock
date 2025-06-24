@@ -50,7 +50,11 @@ let options = {
   audioHr: localStorage.optAudioHr ? localStorage.optAudioHr === 'true' : false,
   meridiem: localStorage.optMeridiem ? localStorage.optMeridiem === 'true' : true,
   seconds: localStorage.optSeconds ? localStorage.optSeconds === 'true' : false,
+  theme: localStorage.theme ? localStorage.theme : 'dark',
 };
+if(storageAvailability) {
+  document.body.className = localStorage.theme;
+}
 const setOption = (optionId) => {
   audioPlonk.play();
 
@@ -82,6 +86,16 @@ const setOption = (optionId) => {
       }
       renderClock();
       break;
+    case 'dark':
+    case 'light':
+    case 'pinky':
+    case 'ugly':
+      options.theme = optionId;
+      if(storageAvailability) {
+        localStorage.setItem('theme', optionId);
+      }
+      document.body.className = optionId;
+      break;
   }
 };
 
@@ -108,7 +122,6 @@ const renderClock = () => {
   let hr = `${(date.getHours() > 12) ? date.getHours() - 12 : date.getHours()}`;
   let min = `:${(date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes()}`;
   let sec = `:${(date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds()}`;
-  console.log('meridiem', options.meridiem, options.meridiem ? (hour > 12) ? " AM" : " PM" : '');
   let meridiem = options.meridiem ? (hour > 12) ? " AM" : " PM" : '';
   // midnight check
   if(hr == 0) {
