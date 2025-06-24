@@ -14,6 +14,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .dark #options {
   background: #666;
 }
+.dark input {
+  accent-color: #000;
+}
 
 .light {
   background: #fff;
@@ -27,6 +30,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 .light #options {
   background: #DFDFDF;
+}
+.light input {
+  accent-color: #007AFF;
 }
 
 .pinky {
@@ -42,6 +48,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .pinky #options {
   background: #ffdfe8;
   color: #ef668a;
+}
+.pinky input {
+  accent-color: #ef668a;
 }
 .pinky hr {
   color: transparent;
@@ -78,6 +87,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: #3b0029 0 0px 20px;
+}
+.ugly input {
+  accent-color: #00ff40;
 }
 .ugly #options #textureCreds {
   display: block;
@@ -165,4 +177,33 @@ time {
   50% { transform: translateX(-3px) }
   75% { transform: translateX(3px) }
   100% { transform: translateX(0) }
+}
+
+@media only screen and (max-width: 800px) {
+  svg {
+    transform: scale(200%) !important;
+  }
+  details[open] #options {
+    top: 70px;
+  }
+  #options {
+    font-size: 28px;
+    max-width: calc(75%);
+  }
+  h2 {
+    padding-top: 20px;
+  }
+  input[type=checkbox] {
+    width: 28px;
+    height: 28px;
+  }
+  select {
+    font-size: 28px;
+  }
+  time {
+    font-size: clamp(1rem, 18vw, 20rem);
+  }
+  #optError, #textureCreds {
+    font-size: 18px;
+  }
 }
