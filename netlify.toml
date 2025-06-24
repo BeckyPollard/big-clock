@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "https://becky-dev.netlify.app/:splat"
+  to = "https://becky-dev.netlify.app/clock:splat"
   status = 200
   force = true
