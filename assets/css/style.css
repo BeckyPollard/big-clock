@@ -10,9 +10,6 @@ body {
   font-family: sans-serif;
 }
 
-header {
-}
-
 details summary {
   list-style: none;
   cursor: pointer;
@@ -21,20 +18,26 @@ details summary {
   left: 20px;
   fill: #ffffff86;
 
+  &:hover svg, details[open] summary svg {
+    transform: rotate(90deg);
+  }
+}
+/* details summary:hover svg, details[open] summary svg {
+  transform: rotate(90deg);
+} */
+details[open] {
+  summary svg {
+    fill: #fff;
+  }
+
+  #options {
+    top: 60px;
+    left: 0;
+    opacity: 1;
+  }
 }
 
-details summary:hover svg, details[open] summary svg {
-  transform: rotate(90deg);
-}
-details[open] summary svg {
-  fill: #fff;
-}
-details[open] #options {
-  top: 60px;
-  left: 0;
-  opacity: 1;
-}
-details #options {
+#options {
   background: #666;
   padding: 10px;
   text-align: center;
@@ -43,22 +46,23 @@ details #options {
   position: absolute;
   left: -300px;
   opacity: 0;
-}
-
-#options form {
-  text-align: left;
-}
-
-#options label {
-  width: 100%;
   display: block;
-  cursor: pointer;
-}
 
-#options #optError {
-  font-size: 14px;
-  text-align: left;
-  color: red;
+  form {
+    text-align: left;
+  }
+
+  label {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+
+  #optError {
+    font-size: 14px;
+    text-align: left;
+    color: red;
+  }
 }
 
 main {
@@ -76,5 +80,4 @@ main {
     font-size: clamp(1rem, 15vw, 20rem);
     text-transform: uppercase;
   }
-
 }
