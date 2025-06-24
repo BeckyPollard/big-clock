@@ -1,25 +1,18 @@
-# Big Clock (WIP)
-![web app preview](https://github.com/user-attachments/assets/8ced1e7e-a781-41ea-a0d2-b88d66e90159)
+# Big Clock
+![preview](https://github.com/user-attachments/assets/1769c1b2-45d1-4b21-8282-1a6b1a2f6373)
+
 
 <div align="center">
   <p>A simple, in-your-face clock for time management.</p>
-  <img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" /><img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" /><img align="center" src="https://github.com/user-attachments/assets/67560d2e-cc1b-490d-ad15-b4134ed614c8" />
 </div>
 
 ## ⭐️ Why
-It's part of my personal productivity needs. I like having a gentle reminder about how much time I have left to do whatever or how long I've spent working on something. I don't want a whole whack-load of alarms to keep track of. I just want an easy, to-the-point reference. Maybe this tool will help someone else too.
+It's part of my personal productivity needs. I like having a gentle reminder about how much time I have left to do whatever or how long I've spent working on something. I don't want a whole whack-load of alarms to keep track of. I just want an easy, to-the-point reference stuck on my second monitor. Maybe this tool will help someone else too.
 
-Most of all, this is a project for learning and experimenting.
+Most of all, this is a project for learning and experimenting. I tried out **native nesting styles in CSS**, deploying a GitHub project to a Netlify-hosted website subdirectory, worked with audio in JavaScript, and tinkered with saving user settings to the browser storage.
+
+No trackers, no guff, no nonsence... just a simple JS clock.
 
 ## 🕓 View the project
-### → https://garbagemancer-clock.netlify.app/
+### → https://becky.dev/clock/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/60120ce8-a8de-481f-ad18-b2f79d605922/deploy-status)](https://app.netlify.com/sites/garbagemancer-clock/deploys)
-
-## 🏗 Development
-This project is an opportunity to experiment with sounds, CSS nesting, and making an app that uses options to customize the user experience.
-
-### Set-up
-1. Clone down this new repo, or whatever you wanna do to get the code.
-2. Install dependencies `npm i`
-3. To run the localhost development server: `npm start` (http://localhost:666/)
-4. To bundle everything for production, run: `npm run build`, however code added to the main branch will automatically be deployed.
