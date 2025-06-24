@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="____">
-    <meta name="____">
+    <meta name="description" content="_____________________________">
+    <meta name="Big Clock">
     <meta name="author" content="Becky Pollard">
-    <title>____</title>
+    <title>Big Clock</title>
     <link rel="icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
@@ -26,8 +26,8 @@
             <label for="audioMin">
               Ping Minute
               <input
-                type="checkbox"
                 id="audioMin"
+                type="checkbox"
                 name="audioMin"
                 value="audioMin"
                 onClick='setOption(this.id)'
@@ -35,7 +35,23 @@
             </label>
             <label for="audioHr">
               Announce Hour
-              <input type="checkbox" id="audioHr" name="audioHr" value="audioHr" disabled>
+              <input
+                id="audioHr"
+                type="checkbox"
+                name="audioHr"
+                value="audioHr"
+                onClick='setOption(this.id)'
+              >
+            </label>
+            <label for="meridiem">
+              AM/PM
+              <input
+                id="meridiem"
+                type="checkbox"
+                name="meridiem"
+                value="meridiem"
+                onClick='setOption(this.id)'
+              >
             </label>
           </form>
           <hr>
@@ -51,6 +67,21 @@
       <source src="./assets/audio/plonk.ogg" type="audio/ogg">
       <source src="./assets/audio/plonk.mp3" type="audio/mpeg">
     </audio>
+    <audio id="ping"><source src="./assets/audio/ping.mp3" type="audio/mpeg"></audio>
+
+    <audio id="one"><source src="./assets/audio/1.mp3" type="audio/mpeg"></audio>
+    <audio id="two"><source src="./assets/audio/2.mp3" type="audio/mpeg"></audio>
+    <audio id="three"><source src="./assets/audio/3.mp3" type="audio/mpeg"></audio>
+    <audio id="four"><source src="./assets/audio/4.mp3" type="audio/mpeg"></audio>
+    <audio id="five"><source src="./assets/audio/5.mp3" type="audio/mpeg"></audio>
+    <audio id="six"><source src="./assets/audio/6.mp3" type="audio/mpeg"></audio>
+    <audio id="seven"><source src="./assets/audio/7.mp3" type="audio/mpeg"></audio>
+    <audio id="eight"><source src="./assets/audio/8.mp3" type="audio/mpeg"></audio>
+    <audio id="nine"><source src="./assets/audio/9.mp3" type="audio/mpeg"></audio>
+    <audio id="ten"><source src="./assets/audio/10.mp3" type="audio/mpeg"></audio>
+    <audio id="eleven"><source src="./assets/audio/11.mp3" type="audio/mpeg"></audio>
+    <audio id="twelve"><source src="./assets/audio/12.mp3" type="audio/mpeg"></audio>
+
     <script src="./scripts/main.js"></script>
   </body>
 </html>

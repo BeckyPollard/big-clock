@@ -1,5 +1,19 @@
 // AUDIO INGREDIENTS
 const audioPlonk = document.getElementById('plonk');
+const audioPing = document.getElementById('ping');
+
+const audioHrOne = document.getElementById('one');
+const audioHrTwo = document.getElementById('two');
+const audioHrThree = document.getElementById('three');
+const audioHrFour = document.getElementById('four');
+const audioHrFive = document.getElementById('five');
+const audioHrSix = document.getElementById('six');
+const audioHrSeven = document.getElementById('seven');
+const audioHrEight = document.getElementById('eight');
+const audioHrNine = document.getElementById('nine');
+const audioHrTen = document.getElementById('ten');
+const audioHrEleven = document.getElementById('eleven');
+const audioHrTwelve = document.getElementById('twelve');
 
 const optionsToggleClick = () => {
   audioPlonk.play();
@@ -9,15 +23,25 @@ const optionsToggleClick = () => {
 
 // OPTIONS
 let options = {
-  audioMin: false,
-  audioHr: false,
+  audioMin: true,
+  audioHr: true,
+  meridiem: false,
 };
 
 const setOption = (optionId) => {
   audioPlonk.play();
 
-  if(optionId = 'audioMin') {
-    options.audioMin = !options.audioMin;
+  switch(optionId) {
+    case 'audioMin':
+      options.audioMin = !options.audioMin;
+      break;
+    case 'audioHr':
+      options.audioHr = !options.audioHr;
+      break;
+    case 'meridiem':
+      options.meridiem = !options.meridiem;
+      renderClock();
+      break;
   }
 
 };
@@ -53,18 +77,62 @@ const renderClock = () => {
   // options
   // Audio: Ping Minute
   if(options.audioMin && min !== minute && minute !== '') {
-    audioPlonk.play();
+    audioPing.play();
   }
+
   // Audio: Announce Hour
   if(options.audioHr && hr !== hour && hour !== '') {
-    audioPlonk.play();
+    switch(hr) {
+      case 1:
+        audioHrOne.play();
+        break;
+      case 2:
+        audioHrTwo.play();
+        break;
+      case 3:
+        audioHrThree.play();
+        break;
+      case 4:
+        audioHrFour.play();
+        break;
+      case 5:
+        audioHrFive.play();
+        break;
+      case 6:
+        audioHrSix.play();
+        break;
+      case 7:
+        audioHrSeven.play();
+        break;
+      case 8:
+        audioHrEight.play();
+        break;
+      case 9:
+        audioHrNine.play();
+        break;
+      case 10:
+        audioHrTen.play();
+        break;
+      case 11:
+        audioHrEleven.play();
+        break;
+      case 12:
+        audioHrTwelve.play();
+        break;
+    }
   }
 
   minute = min;
   hour = hr;
 
   let time = `${hr}${min}${sec}`;
-  document.getElementById("big-clock").innerText = time;
+  if(options.meridiem) {
+    let time = `${hr}${min}${sec} ${meridiem}`;
+    document.getElementById("big-clock").innerText = time;
+  } else {
+    let time = `${hr}${min}${sec}`;
+    document.getElementById("big-clock").innerText = time;
+  }
 
   setTimeout(renderClock, 1000); // setTimeout appropriate here? or outside func?
 };
