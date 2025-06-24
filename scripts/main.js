@@ -21,13 +21,36 @@ const optionsToggleClick = () => {
 // ————————————————————————————————————————————————————————————————————— \\
 
 // OPTIONS
-let options = {
-  audioMin: true,
-  audioHr: true,
-  meridiem: false,
-  seconds: true,
+// test if local storage is available
+const storageAvailable = (type) => {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch(e) {
+    return (
+      e instanceof DOMException &&
+      e.name === "QuotaExceededError" &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
 };
+const storageAvailability = storageAvailable("localStorage");
+if(!storageAvailability) {
+  document.getElementById('optError').innerText = 'ERROR: Cannot access local storage. Options will not be saved.';
+}
 
+let options = {
+  audioMin: localStorage.optAudioMin ? localStorage.optAudioMin === 'true' : false,
+  audioHr: localStorage.optAudioHr ? localStorage.optAudioHr === 'true' : false,
+  meridiem: localStorage.optMeridiem ? localStorage.optMeridiem === 'true' : true,
+  seconds: localStorage.optSeconds ? localStorage.optSeconds === 'true' : false,
+};
 const setOption = (optionId) => {
   audioPlonk.play();
 
@@ -35,16 +58,28 @@ const setOption = (optionId) => {
   switch(optionId) {
     case 'audioMin':
       options.audioMin = !options.audioMin;
+      if(storageAvailability) {
+        localStorage.setItem('optAudioMin', options.audioMin);
+      }
       break;
     case 'audioHr':
       options.audioHr = !options.audioHr;
+      if(storageAvailability) {
+        localStorage.setItem('optAudioHr', options.audioHr);
+      }
       break;
     case 'meridiem':
       options.meridiem = !options.meridiem;
+      if(storageAvailability) {
+        localStorage.setItem('optMeridiem', options.meridiem);
+      }
       renderClock();
       break;
     case 'seconds':
       options.seconds = !options.seconds;
+      if(storageAvailability) {
+        localStorage.setItem('optSeconds', options.seconds);
+      }
       renderClock();
       break;
   }
@@ -73,6 +108,7 @@ const renderClock = () => {
   let hr = `${(date.getHours() > 12) ? date.getHours() - 12 : date.getHours()}`;
   let min = `:${(date.getMinutes() < 10) ? "0" + date.getMinutes() : date.getMinutes()}`;
   let sec = `:${(date.getSeconds() < 10) ? "0" + date.getSeconds() : date.getSeconds()}`;
+  console.log('meridiem', options.meridiem, options.meridiem ? (hour > 12) ? " AM" : " PM" : '');
   let meridiem = options.meridiem ? (hour > 12) ? " AM" : " PM" : '';
   // midnight check
   if(hr == 0) {
@@ -92,7 +128,6 @@ const renderClock = () => {
 
   // Audio: Announce Hour
   if(options.audioHr && hr !== hour && hour !== '') {
-    console.log('UPDATING HOUR, CHOOSING SOUND...');
     switch(hr) {
       case '1':
         audioHrOne.play();
