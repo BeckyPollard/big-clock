@@ -66,11 +66,11 @@
             </label>
             <label for="theme">
               Theme
-              <select name="theme" id="theme">
-                <option value="dark" onClick='setOption(this.value)'>Dark</option>
-                <option value="light" onClick='setOption(this.value)'>Light</option>
-                <option value="pinky" onClick='setOption(this.value)'>Pinky</option>
-                <option value="ugly" onClick='setOption(this.value)'>Ugly</option>
+              <select name="theme" id="theme" onchange='setOption(this.value)'>
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="pinky">Pinky</option>
+                <option value="ugly">Ugly</option>
               </select>
             </label>
           </form>

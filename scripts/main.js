@@ -1,4 +1,4 @@
-// AUDIO SOUP
+// AUDIO SOUP INGREDIENTS
 const audioPlonk = document.getElementById('plonk');
 const audioPing = document.getElementById('ping');
 const audioHrOne = document.getElementById('one');
@@ -102,11 +102,11 @@ const setOption = (optionId) => {
 
 const init = () => {
   // set up options
-  // future: pull in options from storage
   document.getElementById('audioMin').checked = options.audioMin;
   document.getElementById('audioHr').checked = options.audioHr;
   document.getElementById('meridiem').checked = options.meridiem;
   document.getElementById('seconds').checked = options.seconds;
+  document.getElementById('theme').value = options.theme;
   // render clock as per current options
   renderClock();
 }
