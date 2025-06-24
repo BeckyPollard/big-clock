@@ -52,9 +52,8 @@ let options = {
   seconds: localStorage.optSeconds ? localStorage.optSeconds === 'true' : false,
   theme: localStorage.theme ? localStorage.theme : 'dark',
 };
-if(storageAvailability) {
-  document.body.className = localStorage.theme;
-}
+document.body.className = options.theme;
+
 const setOption = (optionId) => {
   audioPlonk.play();
 
