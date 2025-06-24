@@ -179,7 +179,8 @@ time {
   100% { transform: translateX(0) }
 }
 
-@media only screen and (max-width: 800px) {
+/* this is for MY phone because this is MY clock */
+@media only screen and (max-width: 980px) {
   svg {
     transform: scale(200%) !important;
   }
