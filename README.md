@@ -10,7 +10,7 @@ It's part of my personal productivity needs. I like having a gentle reminder abo
 
 Most of all, this is a project for learning and experimenting. I tried out **native nesting styles in CSS** (not yet), deploying a GitHub project to a Netlify-hosted website subdirectory, worked with audio in JavaScript, and tinkered with saving user settings to the browser storage.
 
-No trackers, no guff, no nonsence... just a simple JS clock. Pairs well with the [Plash](https://github.com/sindresorhus/Plash) Mac app that makes any website your desktop wallpaper.
+No trackers, no guff, no nonsense... just a simple JS clock. Pairs well with the [Plash](https://github.com/sindresorhus/Plash) Mac app that makes any website your desktop wallpaper.
 
 ## 🕓 View the project
 ### → https://becky.dev/clock/
